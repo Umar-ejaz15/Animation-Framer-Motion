@@ -23,26 +23,40 @@ const App = () => {
       >
         <motion.h1 className="h1">h1 ! my name is umar</motion.h1>
       </motion.div> */}
-        <motion.div 
-        animate={{
-          x: [0,200,200,0,0],
-          y: [0,0,200,200,0],
-          // rotate: 180,
+      <motion.div
+        // animate={{
+        //   x: [0, 200, 200, 0, 0],
+        //   y: [0, 0, 200, 200, 0],
+        //   // rotate: 180,
+        // }}
+        whileHover={{
+          scale: 1.5,
+          borderRadius: "100%",
         }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          
-          ease:"anticipate"
-          // type: "spring",
-          // stiffness: 100,
-          // damping: 20,
+        whileTap={{
+          scale: 0.8,
+          borderRadius: "0%",
         }}
-        className="w-20 h-20 bg-red-500"
-
-        >
-          hiii
-        </motion.div>
+        drag
+        dragConstraints={{
+          top: -100,
+          left: -100,
+          right: 100,
+          bottom: 100,
+        }}
+        dragDirectionLock="true"
+        // transition={{
+        //   duration: 2,
+        //   repeat: Infinity,
+        //   ease: "anticipate",
+        //   // type: "spring",
+        //   // stiffness: 100,
+        //   // damping: 20,
+        // }}
+        className="w-20 h-20 bg-red-500 flex justify-center items-center"
+      >
+        hiii
+      </motion.div>
     </motion.div>
   );
 };
